@@ -1,3 +1,5 @@
+import 'package:aplicacion/pages/PaginaHome.dart';
+import 'package:aplicacion/pages/PaginaUsers.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -9,20 +11,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _paginaActual = 0;
+
+  List<Widget> _paginas = [PaginaHome(), PaginaUsers()];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Proyecto Flutter Scrum 3',
       home: Scaffold(
-        appBar: AppBar(title: Text('Market Delivery')),
-        body: Center(
-          child: Container(
-            child: Text(
-              'Bienvenido a Market Delivery',
-              style: TextStyle(fontSize: 25),
-            ),
-          ),
+        appBar: AppBar(
+          backgroundColor: Colors.yellow,
+          title: Text('Market Delivery'),
         ),
+        body: _paginas[_paginaActual],
         bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
             setState(() {
