@@ -8,7 +8,7 @@ class PaginaProductos extends StatefulWidget {
 }
 
 class _PaginaProductosState extends State<PaginaProductos> {
-  final List<String> _productos = ['Manzana', 'Pan', 'Leche', 'Huevos'];
+  final List<String> _productos = ['Tecnología', 'Ropa', 'Hogar', 'calzado'];
   String? _productoSeleccionado;
 
   @override
@@ -21,20 +21,20 @@ class _PaginaProductosState extends State<PaginaProductos> {
           Icon(Icons.shopping_cart, size: 100, color: Colors.green),
           SizedBox(height: 20),
           Text(
-            'Pagina de Productos',
+            'Productos',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 10),
           Text(
-            'Aquí puedes ver todos los productos disponibles',
+            'Aquí puedes ver las categorías de los productos disponibles',
             style: TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 20),
 
-          // Dropdown
-          Text('Selecciona un producto:', style: TextStyle(fontSize: 16)),
+          // Desplegable
+          Text('Selecciona una Categoría:', style: TextStyle(fontSize: 16)),
           SizedBox(height: 8),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
