@@ -1,5 +1,6 @@
 import 'package:aplicacion/pages/PaginaHome.dart';
 import 'package:aplicacion/pages/PaginaUsers.dart';
+import 'package:aplicacion/pages/PaginaProductos.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -14,9 +15,9 @@ class _MyAppState extends State<MyApp> {
 
   final List<Widget> _paginas = [
     PaginaHome(),
+    PaginaProductos(),
     PaginaUsers(),
-    PaginaProductos()
-    ];
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,8 +25,13 @@ class _MyAppState extends State<MyApp> {
       title: 'Proyecto Flutter Scrum 3',
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.yellow,
-          title: Text('Market Delivery'),
+          backgroundColor: const Color.fromARGB(255, 247, 185, 0),
+          title: Row(
+            children: [
+              Image.asset('assets/images/logo.jpg', height: 100),
+              SizedBox(width: 10),
+            ],
+          ),
         ),
         body: _paginas[_paginaActual],
         bottomNavigationBar: BottomNavigationBar(
@@ -36,54 +42,19 @@ class _MyAppState extends State<MyApp> {
           },
           currentIndex: _paginaActual,
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home), 
-              label: "Home"
-            ),
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
 
             BottomNavigationBarItem(
               icon: Icon(Icons.supervised_user_circle),
-              label: "Users",
+              label: "Usuarios",
             ),
 
             BottomNavigationBarItem(
-              icon: Icon (Icons.shopping_cart),
-              label: "Productos"
-            )
-            
+              icon: Icon(Icons.shopping_cart),
+              label: "Productos",
+            ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class PaginaProductos extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.shopping_cart,
-            size: 100,
-            color: Colors.green,
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Pagina de Productos',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Aquí puedes ver todos los productos disponibles',
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
       ),
     );
   }
