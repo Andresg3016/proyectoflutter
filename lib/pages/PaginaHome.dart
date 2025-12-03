@@ -13,16 +13,15 @@ class PaginaHome extends StatelessWidget {
             child: SearchBar(hintText: 'Buscar...'),
           ),
 
-          // Carrusel de imágenes
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
             child: SizedBox(
               height: 180,
               child: CarouselImages(
                 imageUrls: [
-                  'https://picsum.photos/800/400?image=10',
-                  'https://picsum.photos/800/400?image=20',
-                  'https://picsum.photos/800/400?image=30',
+                  'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=400&fit=crop',
+                  'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=400&fit=crop',
+                  'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=400&fit=crop',
                 ],
               ),
             ),
