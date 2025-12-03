@@ -12,7 +12,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _paginaActual = 0;
 
-  List<Widget> _paginas = [PaginaHome(), PaginaUsers()];
+  final List<Widget> _paginas = [
+    PaginaHome(),
+    PaginaUsers(),
+    PaginaProductos()
+    ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,13 +36,54 @@ class _MyAppState extends State<MyApp> {
           },
           currentIndex: _paginaActual,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home), 
+              label: "Home"
+            ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.supervised_user_circle),
               label: "Users",
             ),
+
+            BottomNavigationBarItem(
+              icon: Icon (Icons.shopping_cart),
+              label: "Productos"
+            )
+            
           ],
         ),
+      ),
+    );
+  }
+}
+
+class PaginaProductos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.shopping_cart,
+            size: 100,
+            color: Colors.green,
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Pagina de Productos',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'Aquí puedes ver todos los productos disponibles',
+            style: TextStyle(fontSize: 16),
+          ),
+        ],
       ),
     );
   }
